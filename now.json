@@ -1,0 +1,31 @@
+{
+    "name": "calendar_merge",
+    "version": 2,
+    "env": {
+        "HUBERT_TABULA_ID": "@hubert-tabula-id",
+        "GOOGLE_API_TOKEN": "Larry's the best"
+    },
+    "builds": [
+        {
+            "src": "**/*.py",
+            "use": "@now/python"
+        },
+        {
+            "src": "index.html",
+            "use": "@now/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/index",
+            "headers": {
+                "cache-control": "s-maxage=1000"
+            },
+            "dest": "/index.html"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "api/$1.py"
+        }
+    ]
+}
