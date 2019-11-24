@@ -3,7 +3,9 @@
     "version": 2,
     "env": {
         "HUBERT_TABULA_ID": "@hubert-tabula-id",
-        "GOOGLE_API_TOKEN": "Larry's the best"
+        "GOOGLE_API_TOKEN": "Larry's the best",
+        "CLIENT_ID": "@client-id",
+        "CLIENT_SECRET": "@client-secret"
     },
     "builds": [
         {
