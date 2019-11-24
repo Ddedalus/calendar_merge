@@ -1,12 +1,13 @@
 from os import environ
 
-from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import Flow, InstalledAppFlow
-
-from api.index import app
+import flask
+from google_auth_oauthlib.flow import Flow
 
 # scopes requested by the app
 scopes = ["https://www.googleapis.com/auth/calendar.events"]
+
+
+app = flask.Flask(__name__)
 
 
 @app.route("/", defaults={"path": ""})
@@ -20,7 +21,7 @@ def oauth(path):
     authorization_url, state = flow.authorization_url(access_type="offline")
     print("state:", state)
 
-    creds = flow.run_local_server(port=3000)
+    return flask.Response(authorization_url, mimetype='plain/text')
 
 
 def client_config():
