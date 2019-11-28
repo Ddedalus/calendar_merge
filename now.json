@@ -20,7 +20,7 @@
     "routes": [
         {
             "src": "/",
-            "dest": "api/app.py"
+            "dest": "api/oauth.py"
         },
         {
             "src": "/index",

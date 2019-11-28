@@ -14,14 +14,13 @@ app = flask.Flask(__name__)
 @app.route("/<path:path>")
 def oauth(path):
     """ Perform the OAuth2.0 authentication request"""
-    return ("Redirected to:", path)
     flow = Flow.from_client_config(client_config(), scopes)
     flow.redirect_uri = "https://calendarmerge.now.sh/oauth_landing"
 
     authorization_url, state = flow.authorization_url(access_type="offline")
     print("state:", state)
 
-    return flask.Response(authorization_url, mimetype='plain/text')
+    return flask.Response(authorization_url, mimetype="text/plain")
 
 
 def client_config():
