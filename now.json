@@ -19,6 +19,10 @@
     ],
     "routes": [
         {
+            "src": "/",
+            "dest": "api/app.py"
+        },
+        {
             "src": "/index",
             "headers": {
                 "cache-control": "s-maxage=1000"
