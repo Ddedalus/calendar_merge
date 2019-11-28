@@ -1,2 +1,6 @@
 .pyc
 __pycache__
+.now
+.env
+client_id.json
+client_secret.json
