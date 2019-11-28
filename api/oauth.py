@@ -20,7 +20,7 @@ def oauth(path):
     authorization_url, state = flow.authorization_url(access_type="offline")
     print("state:", state)
 
-    return flask.Response(authorization_url, mimetype="text/plain")
+    return flask.redirect(authorization_url)
 
 
 def client_config():
